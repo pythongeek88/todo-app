@@ -106,7 +106,7 @@ function TodoList({ userToken, refresh, setRefresh }) {
     const saveChanges = async () => {
         const hasOrderChanged = todos.some((todo, index) => {
             const initialTodo = initialTodos.find(initialTodo => initialTodo.id === todo.id);
-            return todo.order !== initialTodo.order;
+            return initialTodo ? todo.order !== initialTodo.order : false;
         });
         
         if (hasOrderChanged) {

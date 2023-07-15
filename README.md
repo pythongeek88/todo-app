@@ -27,10 +27,15 @@ This server should connect to a DB (of any kind) in order to store the todo item
 - on BE used custom User model + lots of changes for it + batch-update for drag-and-drop functionality on FE
 - implemented TokenAuthentication on BE and FE
 - implemented swagger for BE testing: http://localhost:8000/swagger/
+![Swagger](./images/swagger.png)
 - models registered on Django admin: http://localhost:8000/admin/
+![Django admin](./images/admin.png)
 - FE runs on http://localhost:3000/
+![Register](./images/register.png)
+![Login](./images/login.png)
+![New todo](./images/add_new_todo.png)
+![Created not saved todo](./images/created_not_saved.png)
+![Saved todos](./images/saved_todos.png)
+![Updated and deleted todos](./images/updated_and_deleted.png)
 - tested locally - some FE bugs still possible
 - from docker-compose.yml used only DB, backend and frontend require docker contarization (starter Dockerfiles exist)
-
-  Images:
-  
