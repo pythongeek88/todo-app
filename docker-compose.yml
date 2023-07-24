@@ -23,14 +23,17 @@ services:
       - db
 
   frontend:
-    build: ./frontend
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
     volumes:
-      - ./frontend/:/usr/src/app/
+      - ./frontend/todoapp/:/usr/src/app/
       - /usr/src/app/node_modules
     ports:
       - 3000:3000
     depends_on:
       - backend
+
 
 volumes:
   postgres_data:

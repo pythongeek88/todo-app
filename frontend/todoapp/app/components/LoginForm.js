@@ -9,7 +9,7 @@ const LoginForm = ({ switchForm, setUserToken }) => {
 
   const login = async () => {
     try {
-      const response = await axios.post('http://localhost:8000/api-token-auth/', { email, password });
+      const response = await axios.post('http://backend:8000/api-token-auth/', { email, password });
       localStorage.setItem('userToken', response.data.token);
       setUserToken(response.data.token);
     } catch (error) {

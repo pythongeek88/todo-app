@@ -58,7 +58,7 @@ function TodoList({ userToken, refresh, setRefresh }) {
         setInitialTodos(initialTodosFromLocalStorage);
         setDeletedTodos(deletedTodosFromLocalStorage);
 
-        axios.get('http://localhost:8000/todos', {
+        axios.get('http://backend:8000/todos', {
             headers: { 'Authorization': `Token ${userToken}` }
         })
         .then(res => {
@@ -117,7 +117,7 @@ function TodoList({ userToken, refresh, setRefresh }) {
         
             // Perform the batch update
             try {
-                await axios.patch('http://localhost:8000/todos/batch-update/', batchUpdateData, {
+                await axios.patch('http://backend:8000/todos/batch-update/', batchUpdateData, {
                     headers: { Authorization: `Token ${userToken}` },
                 });
             } catch (error) {
@@ -130,7 +130,7 @@ function TodoList({ userToken, refresh, setRefresh }) {
             if (todo.new) {
                 try {
                     const res = await axios.post(
-                        'http://localhost:8000/todos/',
+                        'http://backend:8000/todos/',
                         { title: todo.title, completed: todo.completed, order: todo.order },
                         { headers: { 'Authorization': `Token ${userToken}` }}
                     );
@@ -143,7 +143,7 @@ function TodoList({ userToken, refresh, setRefresh }) {
             } else if (!initialTodo || todo.title !== initialTodo.title || todo.completed !== initialTodo.completed) {
                 try {
                     await axios.patch(
-                        `http://localhost:8000/todos/${todo.id}/`,
+                        `http://backend:8000/todos/${todo.id}/`,
                         { title: todo.title, completed: todo.completed, order: todo.order },
                         { headers: { 'Authorization': `Token ${userToken}` }}
                     );
@@ -156,7 +156,7 @@ function TodoList({ userToken, refresh, setRefresh }) {
         for (const id of deletedTodos) {
             try {
                 await axios.delete(
-                    `http://localhost:8000/todos/${id}/`,
+                    `http://backend:8000/todos/${id}/`,
                     { headers: { 'Authorization': `Token ${userToken}` }}
                 );
             } catch (error) {

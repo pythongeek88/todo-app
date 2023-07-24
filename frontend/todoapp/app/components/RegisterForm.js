@@ -8,8 +8,8 @@ const RegisterForm = ({ setUserToken, switchForm }) => {
 
     const register = async () => {
         try {
-            await axios.post("http://localhost:8000/register/", { email, password });
-            const response = await axios.post('http://localhost:8000/api-token-auth/', { email, password });
+            await axios.post("http://backend:8000/register/", { email, password });
+            const response = await axios.post('http://backend:8000/api-token-auth/', { email, password });
             localStorage.setItem('userToken', response.data.token);
             setUserToken(response.data.token);
         } catch (error) {
