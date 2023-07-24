@@ -38,4 +38,7 @@ This server should connect to a DB (of any kind) in order to store the todo item
 ![Saved todos](./images/saved_todos.png)
 ![Updated and deleted todos](./images/updated_and_deleted.png)
 - tested locally - some FE bugs still possible
-- from docker-compose.yml used only DB, backend and frontend require docker contarization (starter Dockerfiles exist)
+**How to start:**
+- cd to folder with docker-compose.yml: cd todo_app
+- run: docker-compose build
+- run: docker-compose up
