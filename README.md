@@ -29,6 +29,7 @@ This server should connect to a DB (of any kind) in order to store the todo item
 - implemented swagger for BE testing: http://localhost:8000/swagger/
 ![Swagger](./images/swagger.png)
 - models registered on Django admin: http://localhost:8000/admin/
+(email: admin@example.com, password: admin)
 ![Django admin](./images/admin.png)
 - FE runs on http://localhost:3000/
 ![Register](./images/register.png)
