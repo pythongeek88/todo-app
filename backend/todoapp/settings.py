@@ -109,8 +109,8 @@ DATABASES = {
         'NAME': 'todoapp',
         'USER': 'admin',
         'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': 9999,
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 

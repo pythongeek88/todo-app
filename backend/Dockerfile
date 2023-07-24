@@ -7,6 +7,9 @@ ENV PYTHONUNBUFFERED=1
 # Set the working directory in the container to /backend
 WORKDIR /backend
 
+# Install PostgreSQL client
+RUN apt-get update && apt-get install -y postgresql-client
+
 # Copy requirements.txt and install dependencies
 COPY requirements.txt .
 RUN pip install -r requirements.txt
